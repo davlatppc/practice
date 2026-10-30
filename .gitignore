@@ -1,12 +1,5 @@
-# окружение и кэш
 venv/
 .venv/
 __pycache__/
 *.pyc
-# база данных и секреты
 app.db
-*.db
-.env
-# IDE
-.idea/
-.vscode/
