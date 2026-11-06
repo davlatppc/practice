@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Контакты</h1>
+    <div>
+      <span id="username"></span>
+      <button id="logout">Выйти</button>
+    </div>
+  </header>
+
+  <main id="app" hidden>
+    <div id="error" class="error" hidden></div>
+
+    <section>
+      <h2>Группы</h2>
+      <div id="groups"></div>
+      <form id="group-form" class="row">
+        <input id="group-name" type="text" placeholder="Новая группа">
+        <button class="main" type="submit">Добавить группу</button>
+      </form>
+    </section>
+
+    <section>
+      <h2 id="form-title">Новый контакт</h2>
+      <div id="form-error" class="error" hidden></div>
+      <form id="contact-form">
+        <label for="name">Имя *</label>
+        <input id="name" type="text">
+        <label for="phone">Телефон *</label>
+        <input id="phone" type="text">
+        <label for="email">E-mail</label>
+        <input id="email" type="text">
+        <label for="birthday">День рождения</label>
+        <input id="birthday" type="date">
+        <label for="group_id">Группа</label>
+        <select id="group_id"></select>
+        <label class="check"><input id="is_favorite" type="checkbox"> Избранный</label>
+        <div class="row">
+          <button class="main" type="submit">Сохранить</button>
+          <button id="cancel" type="button" hidden>Отмена</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Список контактов</h2>
+      <form id="filters" class="row">
+        <input id="q" type="search" placeholder="Поиск по имени или телефону">
+        <button type="submit">Найти</button>
+      </form>
+      <div class="row">
+        <select id="filter-group"></select>
+        <select id="sort">
+          <option value="name">По имени</option>
+          <option value="created">Сначала новые</option>
+        </select>
+      </div>
+      <label class="check"><input id="filter-birthday" type="checkbox"> Дни рождения в этом месяце</label>
+      <div id="status"></div>
+      <ul id="contacts"></ul>
+      <button id="more" hidden>Показать ещё</button>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
